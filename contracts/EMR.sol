@@ -4,7 +4,7 @@ pragma solidity ^0.8;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract HealthRecord is Ownable {
+contract EMR is Ownable {
     struct UserDetails {
         string privateKey;
         string hashData;
@@ -47,7 +47,7 @@ contract HealthRecord is Ownable {
         public
         onlyOwner
     {
-        // require userHash
+        // require userKey
         require(patient[_ehToken].isActive, "No Patient Found!");
         patient[_ehToken].hashData = _userHash;
     }
