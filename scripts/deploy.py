@@ -1,4 +1,3 @@
-from eth_account import Account
 from brownie import EMR, network, config
 from .helpers import get_account
 
@@ -33,7 +32,7 @@ def get_user_key(unique_token):
 def get_user_data(unique_token):
     account = get_account()
     emr = EMR[-1]
-    tx = emr.getUserHashData.call(unique_token,{'from':account})
+    tx = emr.getUserHashData.call(unique_token)
     return tx
 
 def main():

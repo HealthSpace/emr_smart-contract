@@ -18,7 +18,6 @@ contract EMR is Ownable {
 
     function getUserKey(string memory _ehToken)
         public
-        onlyOwner
         returns (string memory)
     {
         require(patient[_ehToken].isActive, "No Patient Found!");
